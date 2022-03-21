@@ -1,5 +1,10 @@
-import { Switch, Route, BrowserRouter } from 'react-router-dom;'
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header/Header';
+import Characters from './views/Characters/Characters';
+import Films from './views/Books/Books';
+import Books from './views/Films/Films';
+import Home from './views/Main/Home';
 
 function App() {
  
