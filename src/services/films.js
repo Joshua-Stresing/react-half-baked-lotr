@@ -5,6 +5,8 @@ export async function fetchFilms() {
       Authorization: `Bearer ${process.env.REACT_APP_SUPABASE_KEY}`,
     },
   });
+  console.log(resp);
   const data = await resp.json();
+  console.log(data);
   return data;
 }

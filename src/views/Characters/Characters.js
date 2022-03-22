@@ -1,26 +1,24 @@
-// import React, { useEffect, useState } from 'react';
-// import { fetchCharacters } from './services/characters';
+import React, { useEffect, useState } from 'react';
+import { fetchCharacters } from '../../services/characters';
 
-// const [chars, setChars] = useState([]);
-// const [error, setError] = useState('');
+export default function Characters() {
+  const [chars, setChars] = useState([]);
+  const [error, setError] = useState('');
+  const [race, setRace] = useState('ALL');
 
-// useEffect(() => {
-//   const fetchData = async () => {
-//     try {
-//       const data = await fetchCharacters();
-
-//       setChars(data);
-//     } catch (e) {
-//       setError(e.message);
-//     }
-//   };
-//   fetchData();
-// }, []);
-
-import React from 'react';
-
-export default function characters() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchCharacters(race);
+        setChars(data);
+      } catch (e) {
+        setError(e.message);
+      }
+    };
+    fetchData();
+  }, []);
   return (
-    <div>characters</div>
+    <div>
+        characters</div>
   );
 }

@@ -2,8 +2,8 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Characters from './views/Characters/Characters';
-import Films from './views/Books/Books';
-import Books from './views/Films/Films';
+import Films from './views/Films/Films';
+import Books from './views/Books/Books';
 import Home from './views/Main/Home';
 
 function App() {
