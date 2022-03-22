@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { fetchBooks } from './services/books';
+import { fetchBooks } from '../../services/books';
 
-const [films, setBooks] = useState([]);
-const [error, setError] = useState('');
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const data = await fetchBooks();
+export default function Books() {
+  const [books, setBooks] = useState([]);
+  const [error, setError] = useState('');
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchBooks();
+          
+        setBooks(data);
+      } catch (e) {
+        setError(e.message);
+      }
+    };
+    fetchData();
+  }, []);
 
-      setBooks(data);
-    } catch (e) {
-      setError(e.message);
-    }
-  };
-  fetchData();
-}, []);
-
-return (
+  return (
     <div className='Books'>
-        <h1>Books</h1>
-        {error && <p>{error}</p>}
-        {setBooks.map((book)=> (
-            <p key={book.id}>{book.name}</p>        
-        ))}
+      <h1>Books</h1>
+      {error && <p>{error}</p>}
+      { books.map((book)=> (
+        <p key={book.id}>{book.title}</p>        
+      ))}
     </div>
-)
+  );
+}

@@ -22,13 +22,13 @@ function App() {
           <Route exact path = "/films">
             <Films />
           </Route>
-          <Route exact path = "books">
+          <Route exact path = "/books">
             <Books />
           </Route>
         </Switch>
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
