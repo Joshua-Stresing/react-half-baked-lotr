@@ -22,8 +22,13 @@ export default function Films() {
     <div className='Films'>
       <h1>Films</h1>
       {error && <p>{error}</p>}
-      { films.map((film)=> (
-        <p key={film.id}>{film.title}</p>        
+      { films.map((data)=> (
+        
+        <div key={data.id}> 
+          <h1>{data.title}</h1> 
+          <p>Box Office Total: {data.box_office_total}</p>
+          <p>Academy Award Nominations: {data.academy_award_nominations}</p>
+        </div>
       ))}
     </div>
   );
